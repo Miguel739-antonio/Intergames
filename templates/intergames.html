@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="base">
+    <div class="img_logo">
+        <img src="../static/logo.png" height="px" width="1px"/>
+    </div>
+    <div class="inicio">
+        <img src="../static/sem fundo.png" height="30px" width="30px"/>
+        <p class="text_inicio">Início</p>
+    </div>
+    <div class="barra_pesquisa_div">
+        <input type="text" placeholder="🔎 Pesquise..." class="barra_pesquisa">
+    </div>
+    <div class="icone_chat">
+        <img src="../static/chat.png" height="30px" width="30px"/>
+    </div>
+    <div class="div_login">
+        <a href="login.html">Login</a>
+    </div>
+    <div class="div_sigin_up">
+        Sign Up
+    </div>
+</div>
+<div class="img_central">
+    <img class="img_div" src="../static/imagem_central.png" height="380px" width="690px"/>
+</div>
+<!-- Essa parte muda -->
+
+
+{% endblock conteudo %}

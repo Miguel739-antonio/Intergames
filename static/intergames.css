@@ -1,0 +1,629 @@
+/* Definindo o estilo global da página */
+body {
+    /*background-color: #440071;*/
+    margin: 0 auto;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+    background-image: linear-gradient(to bottom right, #1B0035, #1B0035, #50009B);
+}
+
+/* Estilo da base da página */
+.base {
+    display: flex;
+    /*justify-content: space-between;*/
+    padding: 10px;
+    /*background-color: purple;*/
+    height: 85px;
+    background-image: linear-gradient(to right, #1B0035, #1B0035, #50009B);
+
+}
+
+/* Estilo do logo */
+.img_logo img {
+    /*margin-top: 1px;*/
+    height: 120px;
+    width: 145px;
+    margin-left: 20px;
+}
+
+/* Estilo do botão de início */
+.inicio {
+    height: 40px;
+    margin-top: 25px;
+    margin-left: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.inicio:hover {
+    height: 45px;
+    margin-top: 25px;
+    margin-left: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.inicio img {
+    margin-right: 8px;
+}
+
+/* Estilo da barra de pesquisa */
+.barra_pesquisa_div {
+    margin-left: 250px;
+    margin-top: 30px;
+    width: 290px;
+}
+
+.barra_pesquisa {
+    background-color: #440071;
+    font-size: 22px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 300px;
+    border: none;
+    border: 1px solid black;
+}
+
+.barra_pesquisa:hover {
+    background-color: #440071;
+    font-size: 22px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 300px;
+    border: none;
+    border: 1px solid white;
+}
+
+.barra_pesquisa::placeholder {
+    color: #fff;
+}
+
+/* Ícone do chat */
+.icone_chat img {
+    height: 30px;
+    width: 30px;
+    margin-top: 40px;
+    margin-left: 220px;
+}
+
+.icone_chat img:hover {
+    height: 32px;
+    width: 32px;
+    margin-top: 40px;
+    margin-left: 220px;
+}
+
+/* Estilo da área de login */
+.div_login {
+    height: 25px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-size: 20px;
+    border: 2px solid #DAA520;
+    color: #DAA520;
+    font-weight: bold;
+}
+
+.teste_1{
+    color: white;
+}
+
+.div_login:hover{
+    height: 25px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-size: 22px;
+    border: 3px solid #DAA520;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo do botão de Sign Up */
+.div_sigin_up {
+    height: 25px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: 35px;
+    font-size: 20px;
+    background-image: linear-gradient(to bottom, white, #DAA520, #DAA520);
+    color: black;
+    font-weight: bold;
+}
+
+.div_sigin_up:hover {
+    height: 25px;
+    margin-top: 30px;
+    margin-left: 35px;
+    font-size: 21px;
+    background-image: linear-gradient(to bottom, white, #DAA520, #DAA520);
+    color: white;
+    font-weight: bold;
+}
+
+.opcoes{
+    display: flex;
+    /*background-color: #440071;*/
+    background-image: linear-gradient(to right, #1B0035, #1B0035, #50009B);
+    font-weight: lighter;
+    gap: 15px;
+    height: 20px;
+    padding: 7px;
+    font-size: 15px;
+    border: 1px solid #DAA520;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px;
+    color: white;
+}
+
+.opcoes div:hover{
+
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Estilo das imagens centrais */
+.img_central {
+    width: 693px;
+    margin-top: 35px;
+    margin-left: 25%;
+}
+
+.img_central:hover {
+    width: 693px;
+    margin-top: 34px;
+    margin-left: 25%;
+}
+
+.img_div {
+    border-radius: 20px;
+}
+.img_div:hover {
+    border-radius: 20px;
+    border: 1px solid #DAA520;
+}
+
+/* Estilo das divs pai (para estruturação da página) */
+.pai_linha {
+    display: flex;
+    background-color: red;
+    height: 100%;
+}
+
+
+/* Barra lateral (menu) */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Barra começa fora da tela */
+    background-image: linear-gradient(to bottom right, #1B0035, #1B0035, #50009B);
+    padding-top: 20px;
+    transition: left 0.3s;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 8px 16px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    background-color: #50009B;
+}
+
+/* Ícone de menu (para abrir a barra lateral) */
+.menu-icon {
+    font-size: 30px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    color: white;
+    z-index: 2;
+}
+
+/* Botão de fechamento da barra lateral */
+.close-btn {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Controle da barra lateral com checkbox */
+.menu-toggle {
+    display: none; /* O checkbox fica invisível */
+}
+
+/* Quando o checkbox estiver marcado, a barra lateral aparece */
+.menu-toggle:checked + .sidebar {
+    left: 0;
+}
+
+/* Quando o checkbox estiver marcado, o ícone do menu some */
+.menu-toggle:checked + .sidebar + .menu-icon {
+    display: none;
+}
+
+/* Estilo da categoria */
+.categoria {
+    font-size: 20px;
+    padding: 10px;
+    background-color: #1B0035;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo da lista de categorias */
+.pai_coluna ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pai_coluna ul li {
+    padding: 10px 20px;
+}
+
+.pai_coluna ul li img {
+    margin-right: 10px;
+}
+
+/* Estilo para o título "Principais Recomendados" */
+h4 {
+    margin-top: 50px;
+    margin-left: 165px;
+    color: white;
+    font-weight: bold;
+}
+
+h4:hover {
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.div_cadastro{
+    background-color: white;
+    width: 375px;
+    display: flex;
+    padding: 10px;
+    margin-top: 15%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    height: 450px;
+    background-image: linear-gradient(to bottom, #1B0035, #1B0035,#1B0035,#1B0035,#1B0035,#1B0035,#1B0035,#2c0154, #DAA520);
+}
+
+
+
+.pai_login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, #350069, #2c0059, #1B0035);
+    padding-bottom: 100px;
+}
+
+
+
+
+.digite_nome{
+    border-radius: 15px;
+    background-color: #2A0052;
+    font-size: 18px;
+    padding: 8px;
+    width: 210px;
+    height: 20px;
+    border: 2px solid #1B0035;
+    margin-bottom: 10px;
+    color: white;
+    cursor: pointer;
+
+}
+
+
+
+.digite_email{
+    border-radius: 15px;
+    background-color: #2A0052;
+    font-size: 18px;
+    padding: 8px;
+    width: 210px;
+    height: 20px;
+    border: 2px solid #1B0035;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: white;
+
+
+}
+
+.digite_senha{
+    border-radius: 15px;
+    background-color: #2A0052;
+    font-size: 18px;
+    padding: 8px;
+    width: 210px;
+    height: 20px;
+    border: 2px solid #1B0035;
+    margin-bottom: 25px;
+    cursor: pointer;
+    color: white;
+
+}
+
+
+
+.botao_login{
+    width: 180px;
+    height: 38px;
+    border-radius: 10px;
+    margin-left: 38px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: bold;
+    border: black;
+    cursor: pointer;
+}
+
+.botao_login:hover{
+    border: 1px solid white;
+}
+
+.esqueci_a_senha{
+    cursor: pointer;
+    font-weight: lighter;
+    font-size: 12px;
+}
+.esqueci_a_senha:hover{
+    text-decoration: underline;
+}
+
+.icones_login{
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.icones_login div:hover{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.criar_jogo{
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    margin-top: 420px;
+    background-color: #DAA520;
+    width: 180px;
+    height: 25px;
+    padding: 5px;
+    font-size: 17px;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+.title_cad_jg{
+    color: white;
+    margin-top: 25px;
+    font-size: 22px;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+select{
+    margin-top: 50px;
+    width: 150px;
+    margin-right: 375px;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #4800a1;
+    color: white;
+}
+
+.botao_jogo{
+    background-color: #1B0035;
+    color: white;
+    height: 45px;
+    width: 155px;
+    border: 1px solid #1B0035;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-left: 250px;
+}
+
+.botao_jogo:hover {
+    background-color: #440071;
+    color: white;
+    height: 38px;
+    width: 148px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+label{
+    color: white;
+}
+
+.title_site{
+    color: white;
+}
+
+.add_jogo{
+    display: flex;
+    flex-direction: column;
+}
+
+.add_jogo_div{
+    background-image: linear-gradient(to bottom right, #350069, #2c0059, #1B0035);
+    width: 650px;
+    height: 700px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.div_cadastro_jogo_pai{
+    display: flex;
+    justify-content: center;
+}
+
+.form_dados input{
+    background-color: #4800a1;
+    color: white;
+    margin-top: 50px;
+    height: 40px;
+    width: 525px;
+    margin-left: 55px;
+    border-radius: 10px;
+}
+
+.pagina_cad_jogo{
+    margin-top: 60px;
+    margin-left: 50px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* =============================== */
+/* CONFIGURAÇÕES FÁCEIS DE TAMANHO */
+/* =============================== */
+:root {
+    --largura-card: 300px;   /* ← ALTERE AQUI o tamanho do card */
+    --altura-imagem: 180px;  /* ← ALTERE AQUI o tamanho da imagem */
+}
+
+/* =============================== */
+/* GRID de 3 CARDS POR LINHA       */
+/* =============================== */
+.container_jogos {
+    display: grid;
+    grid-template-columns: repeat(3, var(--largura-card));
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* =============================== */
+/* ESTILO DOS CARDS                */
+/* =============================== */
+.exibir_jogos {
+    width: var(--largura-card);
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* =============================== */
+/* IMAGENS CONFIGURÁVEIS           */
+/* =============================== */
+.exibir_jogos img {
+    width: 100%;
+    height: var(--altura-imagem);
+    object-fit: cover; /* mantém formato bonito */
+    border-radius: 5px;
+}
+
+/* HOVER MODERNO DOS CARDS */
+.exibir_jogos {
+    width: var(--largura-card);
+    border: 2px solid #2A0052;
+    padding: 15px;
+    border-radius: 15px;
+    background: #21003f;
+    background-image: linear-gradient(to bottom right, #1B0035, #25004d);
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border 0.25s ease,
+        background 0.25s ease;
+}
+
+.exibir_jogos:hover {
+    transform: scale(1.05); /* leve aumento */
+    border: 2px solid #DAA520; /* dourado */
+    box-shadow: 0px 0px 18px rgba(218, 165, 32, 0.55),
+                0px 0px 25px rgba(120, 0, 255, 0.45);
+
+    background-image: linear-gradient(
+        to bottom right,
+        #2d0060,
+        #1B0035,
+        #50009B
+    ); /* degrade moderno */
+}
+
+/* Imagem no hover */
+.exibir_jogos img {
+    width: 100%;
+    height: var(--altura-imagem);
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.exibir_jogos:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.15);
+}
+.pagina_lista_jogos{
+    margin-top: 35px;
+    margin-left: 50px;
+    color: white;
+}

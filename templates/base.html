@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/static/intergames.css">
+
+<meta>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InterGames</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" href="../static/intergames.css">
+
+
+<!-- Checkbox escondido para controlar a barra lateral -->
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+<!-- Barra lateral -->
+<div class="sidebar">
+    <label for="menu-toggle" class="close-btn">X</label>
+    <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><img src="../static/joystick.png" height="20px" width="20px"/><a href="#">Ação</a></li>
+        <li><img src="../static/game.png" height="20px" width="20px"/> <a href="#">RPG</a></li>
+        <li><img src="../static/estrategia.png" height="20px" width="20px"/> <a href="#">Estratégia</a></li>
+        <li><img src="../static/rosa-dos-ventos.png" height="20px" width="20px"/><a href="#">Aventura</a></li>
+        <li><img src="../static/luvas-de-boxe.png" height="20px" width="20px"/><a href="#">Luta</a></li>
+        <li><a href="{{ url_for('listar_plataformas') }}">Plataformas</a></li>
+        <li><a href="{{ url_for('listar_desenvolvedoras') }}">Desenvolvedoras</a></li>
+        <li><a href="{{ url_for('listar_generos') }}">Generos</a></li>
+        <li><a href="{{ url_for('listar_jogos') }}">Jogos</a></li>
+        <li><a href="{{ url_for('post_jogos') }}">Adicionar jogo</a></li>
+
+    </ul>
+</div>
+
+<!-- Ícone para abrir a barra lateral -->
+<label for="menu-toggle" class="menu-icon">☰</label>
+
+
+
+
+{% block conteudo %}
+
+
+<!-- Essa parte muda -->
+
+
+{% endblock conteudo %}

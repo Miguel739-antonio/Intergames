@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterGames</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../static/intergames.css">
+
+</head>
+<body>
+
+<!-- Checkbox escondido para controlar a barra lateral -->
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+<!-- Barra lateral -->
+<div class="sidebar">
+    <label for="menu-toggle" class="close-btn">X</label>
+    <ul>
+        <li><a href="Home.html">Início</a></li>
+        <li><img src="../static/joystick.png" height="20px" width="20px"/><a href="#">Ação</a></li>
+        <li><img src="../static/game.png" height="20px" width="20px"/> <a href="#">RPG</a></li>
+        <li><img src="../static/estrategia.png" height="20px" width="20px"/> <a href="#">Estratégia</a></li>
+        <li><img src="../static/rosa-dos-ventos.png" height="20px" width="20px"/><a href="#">Aventura</a></li>
+        <li><img src="../static/luvas-de-boxe.png" height="20px" width="20px"/><a href="#">Luta</a></li>
+    </ul>
+    <div class="criar_jogo">
+        <a href="cadastro_jogo.html" class="adic_jg">Adicionar Jogo</a>
+    </div>
+</div>
+
+<!-- Ícone para abrir a barra lateral -->
+<label for="menu-toggle" class="menu-icon">☰</label>
+<div class="div_cadastro_jogo">
+    <div class="cadastrar_jogo">
+        <div class="title_cad_jg">
+            Cadastro de Jogo
+        </div>
+        <div class="dados_jogo">
+            <form>
+                <input id="title_jogo" type="text" placeholder="Titulo do jogo" required><br>
+                <input id="capa_jogo" type="url" placeholder="url da imagem" required><br>
+                <input id="desc_jogo" type="text" placeholder="Descrição" required><br>
+                <input id="data_lançamento" type="date" placeholder="Data de lançamento" required><br>
+                <input id="desenvolvedora" type="text" placeholder="Desenvolvedora" required><br>
+                <select id="genero">
+                    <optgroup label="Genêro do jogo">
+                        <option>Ação</option>
+                        <option>RPG</option>
+                        <option>Estratégia</option>
+                        <option>Aventura</option>
+                        <option>Luta</option>
+                    </optgroup>
+                </select><br>
+                <button type="submit" class="botao_jogo">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>

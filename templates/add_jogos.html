@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1 xmlns="http://www.w3.org/1999/xhtml" class="pagina_cad_jogo">Cadastrar jogos</h1>
+<div class="div_cadastro_jogo_pai">
+    <div class="add_jogo_div">
+        <div class="title_cad_jg">Cadastro de Jogo</div>
+        <div class="form_dados">
+            <form action="{{url_for('post_jogos')}}" method="post" class="add_jogo">
+
+                <input type="text" name="form_titulo" id="form_title" placeholder="Titulo do jogo"><br>
+
+
+                <input type="date" name="form_ano_lancamento" required placeholder="Ano de lançamento"><br>
+
+
+                <input type="text" name="form_descricao" required placeholder="Descrição"><br>
+
+
+                <input type="url" name="form_url_img" required placeholder="Url da imagem"><br>
+
+                <label for="Genero">
+                    Gênero
+                </label>
+                <select name="form_genero" id="Genero">
+                    <option>Ação</option>
+                    <option>Ficção científica</option>
+                    <option>Aventura</option>
+                    <option>Terror</option>
+                </select>
+
+                <button type="submit" class="botao_jogo">SALVAR</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock conteudo %}
