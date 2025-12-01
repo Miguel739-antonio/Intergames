@@ -2,6 +2,21 @@
 
 {% block conteudo %}
 
-<h1>Listar generos</h1>
+<h1 class="pagina_cad_jogo">Listar generos</h1>
+
+<form action="{{url_for ('listar_generos') }}" method="POST">
+    <label class="lab_fab">Nome</label><br>
+    <input type="text" class="nome_plataforma" name="form_genero"><br>
+    <button type="submit" class="botao_login">SALVAR</button>
+</form>
+<div class="container_jogos">
+{% for genero in var_generos %}
+<div class="exibir_plataformas">
+
+    <h3>{{ genero.nome }}</h3>
+
+</div>
+{% endfor %}
+</div>
 
 {%  endblock conteudo %}

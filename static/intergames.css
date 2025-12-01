@@ -59,13 +59,14 @@ body {
 }
 
 .barra_pesquisa {
-    background-color: #440071;
+    background-image: linear-gradient(to right, #1B0035, #1B0035, #50009B);
     font-size: 22px;
     border-radius: 10px;
     padding: 5px 10px;
     width: 300px;
     border: none;
     border: 1px solid black;
+    color: white;
 }
 
 .barra_pesquisa:hover {
@@ -76,6 +77,7 @@ body {
     width: 300px;
     border: none;
     border: 1px solid white;
+    cursor: pointer;
 }
 
 .barra_pesquisa::placeholder {
@@ -565,6 +567,7 @@ label{
     background: #f5f5f5;
     text-align: center;
     box-sizing: border-box;
+    margin-bottom: 5px;
 }
 
 /* =============================== */
@@ -627,3 +630,64 @@ label{
     margin-left: 50px;
     color: white;
 }
+
+.nome_plataforma{
+    background-color: #2c0059;
+    width: 200px;
+    height: 25px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 5px;
+}
+
+.lab_fab{
+    margin-left: 28px;
+    font-weight: bold ;
+    font-family: "Montserrat", sans-serif;
+}
+
+.exibir_plataformas{
+    width: var(--largura-card);
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f5f5f5;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+
+}
+
+.exibir_plataformas {
+    width: var(--largura-card);
+    border: 2px solid #2A0052;
+    padding: 15px;
+    border-radius: 15px;
+    background: #21003f;
+    background-image: linear-gradient(to bottom right, #1B0035, #25004d);
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border 0.25s ease,
+        background 0.25s ease;
+}
+.exibir_plataformas:hover {
+    transform: scale(1.05); /* leve aumento */
+    border: 2px solid #DAA520; /* dourado */
+    box-shadow: 0px 0px 18px rgba(218, 165, 32, 0.55),
+                0px 0px 25px rgba(120, 0, 255, 0.45);
+
+    background-image: linear-gradient(
+        to bottom right,
+        #2d0060,
+        #1B0035,
+        #50009B
+    ); /* degrade moderno */
+}
+

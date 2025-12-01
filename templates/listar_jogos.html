@@ -8,6 +8,7 @@
 
 <div class="container_jogos">
     {% for jogo in var_jogos %}
+    <a href="#">
         <div class="exibir_jogos">
 
             <img src="{{ jogo.url_img }}">
@@ -15,6 +16,8 @@
             ANO DE LANÇAMENTO: {{ jogo.ano_lancamento }}<br>
             DESCRIÇÃO: {{ jogo.descricao }}<br>
         </div>
+    </a>
+
     {% endfor %}
 </div>
 

@@ -19,14 +19,9 @@
     <label for="menu-toggle" class="close-btn">X</label>
     <ul>
         <li><a href="/">Inicio</a></li>
-        <li><img src="../static/joystick.png" height="20px" width="20px"/><a href="#">Ação</a></li>
-        <li><img src="../static/game.png" height="20px" width="20px"/> <a href="#">RPG</a></li>
-        <li><img src="../static/estrategia.png" height="20px" width="20px"/> <a href="#">Estratégia</a></li>
-        <li><img src="../static/rosa-dos-ventos.png" height="20px" width="20px"/><a href="#">Aventura</a></li>
-        <li><img src="../static/luvas-de-boxe.png" height="20px" width="20px"/><a href="#">Luta</a></li>
         <li><a href="{{ url_for('listar_plataformas') }}">Plataformas</a></li>
+        <li><a href="{{ url_for('listar_generos') }}">Gênero</a></li>
         <li><a href="{{ url_for('listar_desenvolvedoras') }}">Desenvolvedoras</a></li>
-        <li><a href="{{ url_for('listar_generos') }}">Generos</a></li>
         <li><a href="{{ url_for('listar_jogos') }}">Jogos</a></li>
         <li><a href="{{ url_for('post_jogos') }}">Adicionar jogo</a></li>
 

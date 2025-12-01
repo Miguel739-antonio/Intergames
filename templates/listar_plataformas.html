@@ -2,7 +2,25 @@
 
 {%block conteudo%}
 
-<h1>Plataformas</h1>
+<h1 class="pagina_cad_jogo">Plataformas</h1>
 
+<form action="{{ url_for('listar_plataformas') }}" method="post">
+    <label class="lab_fab">Nome</label><br>
+    <input type="text" name="form_nome" required class="nome_plataforma"><br>
 
+    <label class="lab_fab">Fabricante</label><br>
+    <input type="text" name="form_fabricante" required class="nome_plataforma"><br>
+
+    <button type="submit" class="botao_login">SALVAR</button>
+</form>
+<div class="container_jogos">
+    {% for plataforma in var_plataformas %}
+    <a href="#">
+        <div class="exibir_plataformas">
+            <h3>{{ plataforma.nome }}</h3>
+            <h5>{{ plataforma.fabricante }}</h5>
+        </div>
+    </a>
+    {% endfor %}
+</div>
 {%endblock conteudo%}

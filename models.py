@@ -48,4 +48,4 @@ class Jogo(Base):
     id_FK_Desenvolvedora = Column(Integer, ForeignKey('desenvolvedora.id_desenvolvedora'))
     id_FK_Genero = Column(Integer, ForeignKey('genero.id_genero'))
     def __repr__(self):
-        return f'<Jogo {self.id_jogo}, titulo: {self.titulo}, imagem_capa: {self.imagem_capa}, descricao:{ self.descricao }, ano_lancamento:{ self.ano_lancamento }>'
+        return f'<Jogo {self.id_jogo}, titulo: {self.titulo}, url_img: {self.url_img}, descricao:{ self.descricao }, ano_lancamento:{ self.ano_lancamento }>'
