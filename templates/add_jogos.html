@@ -19,18 +19,28 @@
 
 
                 <input type="url" name="form_url_img" required placeholder="Url da imagem"><br>
+                <div class="opicoes_container">
+                    <label for="Genero">Gênero</label><br>
 
-                <label for="Genero">
-                    Gênero
-                </label>
-                <select name="form_genero" id="Genero">
-                    <option value="1">Ação</option>
-                    <option>Ficção científica</option>
-                    <option>Aventura</option>
-                    <option>Terror</option>
-                    <option>Esporte</option>
-                </select>
-
+                    <select name="form_genero" id="Genero" class="opicoes">
+                        {% for genero in var_generos %}
+                        <option value="{{ genero.id_genero }}"> {{genero.nome}}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="Desenvolvedora">Desenvolvedora</label><br>
+                    <select name="form_desenvolvedora">
+                        {% for desenvolvedora in var_desenvolvedoras %}
+                        <option value="{{ desenvolvedora.id_desenvolvedoras}}"> {{desenvolvedora.nome_desenvolvedora}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                    <label for="Plataforma">Plataforma</label>
+                    <select name="form_plataforma">
+                        {% for plataforma in var_plataformas %}
+                        <option value="{{plataforma.id_plataforma}}"> {{plataforma.nome}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <button type="submit" class="botao_jogo">SALVAR</button>
             </form>
         </div>

@@ -2,7 +2,7 @@ import flask
 from flask import Flask, render_template, request, redirect, url_for, flash
 from sqlalchemy.exc import SQLAlchemyError
 
-from models import local_session, Usuario, Plataforma, Genero, Jogo
+from models import local_session, Usuario, Plataforma, Genero, Jogo, Desenvolvedora
 from sqlalchemy import select
 
 app = Flask(__name__)
@@ -16,6 +16,7 @@ def home():
 
 @app.route('/add_jogo', methods=['GET', 'POST'])
 def post_jogos():
+    db_session = local_session()
     if request.method == 'POST':
         if not request.form['form_titulo']:
             flash("Preencha o formulario para o titulo", "danger")
@@ -34,24 +35,32 @@ def post_jogos():
             descricao=request.form['form_descricao'],
             ano_lancamento=request.form['form_ano_lancamento'],
             url_img=request.form['form_url_img'],
-            id_FK_Genero=request.form['form_genero']
+            id_FK_Genero=int(request.form['form_genero'])
         )
-        db_session = local_session()
         try:
             db_session.add(dados_jogos)
             db_session.commit()
             flash('Jogo adicionado criado com sucesso', 'success')
+
             return redirect(url_for('listar_jogos'))
         except SQLAlchemyError as e:
             print(f'Erro na base de dados{e}')
             db_session.rollback()
             return redirect(url_for('listar_jogos'))
-
-
         finally:
             db_session.close()
 
-    return render_template('add_jogos.html')
+    generos_sql = select(Genero)
+    resultado = db_session.execute(generos_sql).scalars().all()
+
+    desenvolvedoras_sql = select(Desenvolvedora)
+    resultado2 = db_session.execute(desenvolvedoras_sql).scalars().all()
+
+    plataformas_sql = select(Plataforma)
+    resultado3 = db_session.execute(plataformas_sql).scalars().all()
+
+    return render_template('add_jogos.html', var_generos=resultado,
+    var_desenvolvedoras=resultado2, var_plataformas=resultado3                       )
 
 
 @app.route('/jogo')
@@ -60,6 +69,7 @@ def listar_jogos():
     try:
         jogos_sql = select(Jogo)
         resultado = db_session.execute(jogos_sql).scalars()
+        print('ddf',resultado)
         return render_template('listar_jogos.html', var_jogos=resultado)
     except SQLAlchemyError as e:
         print(f'Erro de jogo: {e}')
@@ -96,7 +106,8 @@ def listar_generos():
         print(f'Erro de genero: {e}')
         return redirect(url_for('listar_generos'))
     except Exception as ex:
-        print(f'Erro ao consultar genero: {ex}')
+        print(f'E'
+              f'ultar genero: {ex}')
         return redirect(url_for('listar_generos.'))
     finally:
         db_session.close()
@@ -131,13 +142,56 @@ def listar_plataformas():
         db_session.close()
 
 
-@app.route('/desenvolvedoras')
+@app.route('/desenvolvedora', methods=['GET', 'POST'])
 def listar_desenvolvedoras():
-    return render_template('listar_desenvolvedoras.html')
+    db_session = local_session()
+    try:
+        if request.method == 'POST':
+            print(request.form.get('form_desenvolvedoras'))
+
+            if request.form.get('form_desenvolvedoras'):
+                dados_desenvolvedora = Desenvolvedora(nome=request.form['form_nome'])
+                db_session.add(dados_desenvolvedora)
+                db_session.commit()
+                return redirect(url_for('listar_desenvolvedoras'))
+            else:
+                flash("Preencha o formulario para o nome", "danger")
+
+        desenvolvedoras_sql = select(Desenvolvedora)
+        resultado = db_session.execute(desenvolvedoras_sql).scalars().all()
+        print("dev", resultado)
+        return render_template('listar_desenvolvedoras.html', var_desenvolvedoras=resultado)
+    except SQLAlchemyError as e:
+        print(f'Erro de desenvolvedoras: {e}')
+        return redirect(url_for('home'))
+    except Exception as ex:
+        print(f'Erro ao consultar desenvolvedoras: {ex}')
+        return redirect(url_for('home'))
+    finally:
+        db_session.close()
 
 
+@app.route('/detalhes_jogo/<var_id>', methods=['GET'])
+def detalhar_jogo(var_id):
+    db_session = local_session()
+    try:
+        detalhes_jogo = (select(Jogo, Genero)
+                         .join(Genero, Genero.id_genero==Jogo.id_FK_Genero)
+                         .where(Jogo.id_jogo == var_id))
+        resultado = db_session.execute(detalhes_jogo).all()
 
-
+        print("joo", resultado)
+        return render_template('detalhes_jogo.html', var_detalhes=resultado)
+    except SQLAlchemyError as e:
+        print(f'Erro de detalhes jogo: {e}')
+        flash('Erro ao consultar detalhes jogo', 'danger')
+        return redirect(url_for('listar_jogos'))
+    except Exception as ex:
+        print(f'Erro ao consultar detalhes jogo: {ex}')
+        flash(f'Ocorreu um erro ao consultar detalhes jogo', 'danger')
+        return redirect(url_for('listar_jogos'))
+    finally:
+        db_session.close()
 
 
 

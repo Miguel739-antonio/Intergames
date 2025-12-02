@@ -4,6 +4,17 @@
 
 <h1 class="pagina_cad_jogo">Lista de Desenvolvedoras</h1>
 <!-- Essa parte muda -->
-
+<form action="{{ url_for('listar_desenvolvedoras') }}" method="post">
+    <label class="lab_fab">Nome</label><br>
+    <input type="text" class="nome_plataforma" name="form_plataforma"><br>
+    <button type="submit" class="botao_login">SALVAR</button>
+</form>
+<div class="container_jogos">
+{% for desenvolvedora in var_desenvolvedoras %}
+    <div class="exibir_plataformas">
+        <h3>{{ desenvolvedora.nome_desenvolvedora }}</h3>
+    </div>
+{% endfor %}
+</div>
 
 {% endblock conteudo %}

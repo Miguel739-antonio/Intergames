@@ -19,10 +19,11 @@
     <label for="menu-toggle" class="close-btn">X</label>
     <ul>
         <li><a href="/">Inicio</a></li>
+        <li><a href="{{ url_for('listar_jogos') }}">Jogos</a></li>
         <li><a href="{{ url_for('listar_plataformas') }}">Plataformas</a></li>
         <li><a href="{{ url_for('listar_generos') }}">Gênero</a></li>
         <li><a href="{{ url_for('listar_desenvolvedoras') }}">Desenvolvedoras</a></li>
-        <li><a href="{{ url_for('listar_jogos') }}">Jogos</a></li>
+
         <li><a href="{{ url_for('post_jogos') }}">Adicionar jogo</a></li>
 
     </ul>

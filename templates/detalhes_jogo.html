@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{%  block conteudo %}
+<h1 class="pagina_cad_jogo">Detalhes dos jogos</h1>
+ {% for j, g in var_detalhes%}
+
+    <img src="{{ j.url_img }}">
+    <div>Titulo: {{j.titulo}}</div>
+    <div>Descrição: {{j.descricao}}</div>
+    <div>Ano de lançamento: {{j.ano_lancamento}}</div>
+    <div>Gênero: {{g.nome}}</div>
+{% endfor%}
+
+{%  endblock conteudo %}

@@ -34,9 +34,10 @@ class Genero(Base):
 class Desenvolvedora(Base):
     __tablename__ = 'desenvolvedora'
     id_desenvolvedora = Column(Integer, primary_key=True)
-    nome = Column(String(30), nullable=False)
+    nome_desenvolvedora = Column(String(30), nullable=False)
+
     def __repr__(self):
-        return f'<Desenvolvedora {self.nome}>, id: {self.id_desenvolvedora}>'
+        return f'<Desenvolvedora {self.nome_desenvolvedora}>, id: {self.id_desenvolvedora}>'
 
 class Jogo(Base):
     __tablename__ = 'jogo'

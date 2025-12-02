@@ -4,17 +4,17 @@
 
 <h1 class="pagina_lista_jogos">Lista de Jogos</h1>
 
-<a href="{{ url_for('post_jogos') }}">Novo jogo</a>
+<a href="{{ url_for('post_jogos') }}" class="nv_jg">Novo jogo</a>
 
 <div class="container_jogos">
     {% for jogo in var_jogos %}
-    <a href="#">
+    <a href="{{ url_for('detalhar_jogo', var_id = jogo.id_jogo) }}">
         <div class="exibir_jogos">
 
             <img src="{{ jogo.url_img }}">
             <h3>{{ jogo.titulo }}</h3>
-            ANO DE LANÇAMENTO: {{ jogo.ano_lancamento }}<br>
-            DESCRIÇÃO: {{ jogo.descricao }}<br>
+<!--            ANO DE LANÇAMENTO: {{ jogo.ano_lancamento }}<br>-->
+<!--            DESCRIÇÃO: {{ jogo.descricao }}<br>-->
         </div>
     </a>
 
